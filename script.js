@@ -1,18 +1,10 @@
-//productos
+//peticion del array de productos, con fetch al json
+fetch("./productos.json")
+    .then(response => response.json())
+    .then(productos => miPrograma(productos)) 
+    
 
-let productos = [
-    { id: 1, nombre: "390 ADVENTURE", precio: 4000, imgUrl : "./imgs/390adv.jpeg"},
-    { id: 2, nombre: "790 ADVENTURE", precio: 9100, imgUrl : "./imgs/790.jpg"},
-    { id: 3, nombre: "890 ADVENTURE", precio: 10200, imgUrl : "./imgs/890.jpg"},
-    { id: 4, nombre: "1290 SUPER DUKE", precio: 10300, imgUrl : "./imgs/990.jpg"},
-    { id: 5, nombre: "1290 SUPER ADVENTURE", precio: 20300, imgUrl : "./imgs/1290sa.jpg"},
-    { id: 6, nombre: "890 DUKE GP", precio: 19660, imgUrl : "./imgs/890dk.png"},
-    { id: 7, nombre: "300 ENDURO EXC-2TP", precio: 19660, imgUrl : "./imgs/300.png"},
-    { id: 8, nombre: "450 ENDURO EXC", precio: 7300, imgUrl : "./imgs/450.jpg"}
-]
-
-
-
+function miPrograma(productos) {
 
 let contenedorCarrito = document.getElementById("contenedorCarrito")
 let contenedor = document.getElementById("contenedorProductos")
@@ -48,17 +40,24 @@ function renderizarProductos(arrayDeProductos){
     <p> ID: ${producto.id} </p>
     <p> Precio: U$D ${producto.precio} </p>
     <img src= ${producto.imgUrl} id= "imagenesProductos">
-    <button class="botonAñadirCarrito" id=${producto.id}> Añadir al Carrito </button>
+    <button id=${producto.id} type="button" class="btn btn-secondary"> Añadir al Carrito </button>
     `
     
     contenedor.appendChild(tarjetaProducto)
     }
-    let botones = document.getElementsByClassName("botonAñadirCarrito")
+    let botones = document.getElementsByClassName("btn btn-secondary")
     for (const boton of botones) {
         boton.addEventListener ("click", agregarAlCarrito)
     }
 }
 function agregarAlCarrito (event){
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Se agregó al carrito',
+        showConfirmButton: false,
+        timer: 1500
+    })
     let productoBuscado = productos.find(producto => producto.id == event.target.id)
     let posicionDelProductoBuscado = carrito.findIndex(producto => producto.id == productoBuscado.id)
     if(posicionDelProductoBuscado != -1){
@@ -85,7 +84,16 @@ contenedorCarrito.innerHTML += `
 `
 
 let botonComprar = document.getElementById("comprar")
-botonComprar.addEventListener("click", () => {
+botonComprar.addEventListener("click", () => {Swal.fire({
+    title: 'Confirma su compra?',
+    showClass: {
+    popup: 'animate__animated animate__fadeInDown'
+    },
+    hideClass: {
+    popup: 'animate__animated animate__fadeOutUp'
+    }
+    
+})
     localStorage.removeItem("carrito")
     carrito = []
     renderizarCarrito([])
@@ -109,5 +117,12 @@ function renderizarCarrito (arrayDeProductos){
     }
 }
 
+//vaciar carrito
 
-
+let botonVaciar = document.getElementById("vaciar")
+botonVaciar.addEventListener("click", () => {
+    localStorage.removeItem("carrito")
+    carrito = []
+    renderizarCarrito([])
+})
+}

@@ -5,24 +5,86 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> KTM Adventure Store</title>
+    <!-- Tipografia -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo&display=swap" rel="stylesheet">
+
+    <!-- CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <!-- CSS -->
     <link rel="stylesheet" href="./style.css">
 </head>
-<body class="body">
-    <h1 id="tituloUno"> KTM Store </h1>
-    <img src="./imgs/KTM-Logo.png" alt="" id="ktmLogo">
-    <img src="./imgs/ktm adv.png" alt="" id="ktmLogoDos">
+<body id="bodyGG">
+        <!-- menu de navegacion -->
+        <nav class="navbar navbar-expand-lg bg-transparent d-flex .flex-column">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"> KTM STORE </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html"> Inicio </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="store.html"> Store </a>
+                        </li>
 
-    <h2> Buscar </h2>
-    <input id="buscador"/>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
 
     <main>
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="imgs/1290-Super-Adventure-R-M23-homepage.jpg" class="d-block w-100"
+                        alt="ktm">
+                </div>
+                <div class="carousel-item">
+                    <img src="imgs/Dakar_Win_2023_homepage.jpg" class="d-block w-100" alt="ktm">
+                </div>
+                <div class="carousel-item">
+                    <img src="imgs/ktm travel.jpg" class="d-block w-100" alt="ktm">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
 
-
-        <div id="contenedorProductos"> </div>
-        <div id="contenedorCarrito"> </div>
-        <button id="comprar"> Comprar </button>
+        <form>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"> Email </label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text"> Usaremos este email para contactarte.</div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label"> Pregunta </label>
+              <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <button type="submit" class="btn btn-primary"> Enviar </button>
+          </form>
     </main>
-    
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./script.js"></script>
     
 </body>

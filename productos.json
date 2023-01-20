@@ -1,0 +1,10 @@
+[
+    { "id": 1, "nombre": "390 ADVENTURE", "precio": 4000, "imgUrl" : "./imgs/390adv.jpeg"},
+    { "id": 2, "nombre": "790 ADVENTURE", "precio": 9100, "imgUrl" : "./imgs/790.jpg"},
+    { "id": 3, "nombre": "890 ADVENTURE", "precio": 10200, "imgUrl" : "./imgs/890.jpg"},
+    { "id": 4, "nombre": "1290 SUPER DUKE", "precio": 10300, "imgUrl" : "./imgs/990.jpg"},
+    { "id": 5, "nombre": "1290 SUPER ADVENTURE", "precio": 20300, "imgUrl" : "./imgs/1290sa.jpg"},
+    { "id": 6, "nombre": "890 DUKE GP", "precio": 19660, "imgUrl" : "./imgs/890dk.png"},
+    { "id": 7, "nombre": "300 ENDURO EXC-2TP", "precio": 19660, "imgUrl" : "./imgs/300.png"},
+    { "id": 8, "nombre": "450 ENDURO EXC", "precio": 7300, "imgUrl" : "./imgs/450.jpg"}
+]
